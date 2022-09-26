@@ -1,6 +1,7 @@
 {
 	"name": "@ghostebony/test-github-actions",
 	"version": "0.0.2",
+	"repository": "github:ghostebony/test-github-actions",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package",
