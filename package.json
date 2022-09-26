@@ -10,6 +10,9 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"packageManager": "^pnpm@7.0.3",
+	"engines": {
+		"pnpm": "^7.0.0"
+	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
