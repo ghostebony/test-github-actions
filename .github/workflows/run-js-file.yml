@@ -1,0 +1,38 @@
+name: Run JS file
+
+on:
+  # release:
+  #   types: [created]
+
+  push:
+    branches:
+      - "main"
+
+  # push:
+  #   tags:
+  #     - "v*"
+
+  # schedule:
+  #   - cron: '0 18 * * *'
+
+jobs:
+  run-js-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: run JS file
+        run: pnpm run:js
