@@ -80,7 +80,6 @@ jobs:
       - name: Run Build
         run: pnpm build
 
-      # - run: pnpm publish package/ --no-git-checks
-      - run: pnpm publish package/
+      - run: pnpm publish package/ --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
