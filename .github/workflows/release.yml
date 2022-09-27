@@ -1,8 +1,11 @@
-name: '@ghostebony/test-github-actions Package'
+name: Publish to NPM
 
 on:
   release:
     types: [created]
+  # push:
+  #   branches:
+  #     - 'main'
 
 jobs:
   build:
@@ -10,14 +13,22 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
       - uses: pnpm/action-setup@v2.2.2
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: latest
           cache: pnpm
+
       - run: pnpm install --frozen-lockfile
-      # - run: pnpm test
+
+      - name: Run Linting
+        run: pnpm lint
+
+      # - name: Run Tests
+      #   run: pnpm test
 
   publish-npm:
     needs: build
@@ -25,15 +36,20 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
       - uses: pnpm/action-setup@v2.2.2
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: latest
           cache: pnpm
           registry-url: https://registry.npmjs.org/
+
       - run: pnpm install --frozen-lockfile
+
       - run: pnpm build
+
       - run: pnpm publish package/ --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
