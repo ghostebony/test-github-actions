@@ -3,9 +3,17 @@ name: Publish to NPM
 on:
   release:
     types: [created]
+
   # push:
   #   branches:
   #     - 'main'
+
+  # push:
+  #   tags:
+  #     - 'v*'
+
+  # schedule:
+  #   - cron: '0 18 * * *'
 
 jobs:
   # build:
@@ -82,6 +90,7 @@ jobs:
       - name: Build package
         run: pnpm build
 
-      - run: pnpm publish package/ --no-git-checks
+      - name: Publish package
+        run: pnpm publish package/ --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
