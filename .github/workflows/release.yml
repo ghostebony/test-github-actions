@@ -1,16 +1,16 @@
 name: Publish to NPM
 
 on:
-  release:
-    types: [created]
+  # release:
+  #   types: [created]
 
   # push:
   #   branches:
   #     - 'main'
 
-  # push:
-  #   tags:
-  #     - 'v*'
+  push:
+    tags:
+      - 'v*'
 
   # schedule:
   #   - cron: '0 18 * * *'
