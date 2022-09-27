@@ -62,7 +62,7 @@ jobs:
   #       env:
   #         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
-  release:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
