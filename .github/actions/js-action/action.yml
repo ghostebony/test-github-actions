@@ -1,0 +1,7 @@
+name: "js-action"
+
+description: "action in js"
+
+runs:
+  using: "node16"
+  main: "main.js"
