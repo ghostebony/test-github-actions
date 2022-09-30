@@ -1,7 +1,7 @@
 
-import { readFile } from 'fs';
+import { readFileSync } from 'fs';
 
-const pkg = JSON.parse(readFile('./package.json').toString());
+const pkg = JSON.parse(readFileSync('./package.json').toString());
 
 const currentVersion = pkg.devDependencies.svelte;
 
