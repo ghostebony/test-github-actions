@@ -1,5 +1,5 @@
 import { request } from 'undici';
-import { devDependencies } from './package.json';
+import { devDependencies } from './package';
 
 const currentVersion = devDependencies.svelte.replace(/\W+/g, '');
 
