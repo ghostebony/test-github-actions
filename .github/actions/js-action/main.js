@@ -1,5 +1,5 @@
-import { readdirSync } from 'fs';
 
-readdirSync('.').forEach((file) => {
-	console.log(file);
-});
+import { readFile } from 'fs/promises';
+
+const pkg = await readFile('./package.json');
+console.log(pkg);
