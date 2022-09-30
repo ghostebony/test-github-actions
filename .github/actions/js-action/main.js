@@ -1,5 +1,5 @@
 import { readdirSync } from 'fs';
 
-readdirSync('../../../').forEach((file) => {
+readdirSync('../../').forEach((file) => {
 	console.log(file);
 });
