@@ -1,5 +1,13 @@
 
-import { readFile } from 'fs/promises';
+import { readFile } from 'fs';
 
-const pkg = await readFile('./package.json');
-console.log(pkg.toString());
+const pkg = JSON.parse(readFile('./package.json').toString());
+
+const currentVersion = pkg.devDependencies.svelte;
+
+const res = await fetch('https://registry.npmjs.org/svelte');
+const data = await res.json();
+
+const latestVersion = data['dist-tags'].latest;
+
+console.log({ currentVersion, latestVersion });
