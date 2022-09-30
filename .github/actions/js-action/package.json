@@ -1,8 +1,4 @@
 {
   "main": "main.js",
-  "type": "module",
-  "dependencies": {
-    "@actions/core": "^1.10.0",
-    "undici": "^5.10.0"
-  }
+  "type": "module"
 }
