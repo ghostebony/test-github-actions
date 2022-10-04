@@ -91,7 +91,7 @@ jobs:
         run: pnpm build
 
       - run: |
-          cp LICENSE dist/
+          cp LICENSE package/
 
       - name: Publish package
         run: pnpm publish package/ --no-git-checks
