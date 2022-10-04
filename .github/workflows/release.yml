@@ -90,11 +90,12 @@ jobs:
       - name: Build package
         run: pnpm build
 
-      # - run: |
-      #     cp package.json dist/
-      #     cp README.md dist/
-      #     cp LICENSE dist/
-      - run: cp LICENSE package/
+      - name: Copy files
+        # run: |
+        #     cp package.json dist/
+        #     cp README.md dist/
+        #     cp LICENSE dist/
+        run: cp LICENSE package/
 
       - name: Publish package
         run: pnpm publish package/ --no-git-checks
