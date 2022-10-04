@@ -90,6 +90,9 @@ jobs:
       - name: Build package
         run: pnpm build
 
+      - run: |
+          cp LICENSE dist/
+
       - name: Publish package
         run: pnpm publish package/ --no-git-checks
         env:
