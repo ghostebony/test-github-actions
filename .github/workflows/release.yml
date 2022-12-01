@@ -68,13 +68,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
       
-      - name: Cache pnpm
-        uses: actions/cache@v3
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+#       - name: Cache pnpm
+#         uses: actions/cache@v3
+#         with:
+#           path: ~/.pnpm-store
+#           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+#           restore-keys: |
+#             ${{ runner.os }}-pnpm-store-
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.4
