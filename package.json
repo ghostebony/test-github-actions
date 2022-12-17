@@ -1,6 +1,6 @@
 {
 	"name": "@ghostebony/test-github-actions",
-	"version": "1.0.0-next.1",
+	"version": "1.0.0-next.2",
 	"repository": "github:ghostebony/test-github-actions",
 	"scripts": {
 		"dev": "vite dev",
